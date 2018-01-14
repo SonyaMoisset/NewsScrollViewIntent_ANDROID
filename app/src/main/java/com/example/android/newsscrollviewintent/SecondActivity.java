@@ -12,6 +12,7 @@ public class SecondActivity extends AppCompatActivity {
 
     String mFirstNewsHeading = null;
     String mSecondNewsHeading = null;
+    String mThirdNewsHeading = null;
     String mNewsBody = null;
 
     @Override
@@ -36,6 +37,11 @@ public class SecondActivity extends AppCompatActivity {
             if (extras.containsKey("NewsTwoHeading")) {
                 mSecondNewsHeading = extras.getString("NewsTwoHeading");
                 mNewsHeadingTextView.setText(mSecondNewsHeading);
+            }
+
+            if (extras.containsKey("NewsThreeHeading")) {
+                mThirdNewsHeading = extras.getString("NewsThreeHeading");
+                mNewsHeadingTextView.setText(mThirdNewsHeading);
             }
         }
 

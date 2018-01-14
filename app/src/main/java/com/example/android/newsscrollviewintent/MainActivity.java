@@ -34,4 +34,15 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtras(extras);
         startActivity(intent);
     }
+
+    public void showThirdNews(View view) {
+        Intent intent = new Intent(this, SecondActivity.class);
+        Bundle extras = new Bundle();
+
+        extras.putString("NewsThreeHeading", getString(R.string.third_news_heading));
+        extras.putString("NewsBody", getString(R.string.news_body));
+
+        intent.putExtras(extras);
+        startActivity(intent);
+    }
 }
