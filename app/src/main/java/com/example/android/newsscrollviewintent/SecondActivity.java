@@ -7,13 +7,8 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
-    String mFirstNewsHeading = null;
-    String mSecondNewsHeading = null;
-    String mThirdNewsHeading = null;
-
-    String mFirstNewsBody = null;
-    String mSecondNewsBody = null;
-    String mThirdNewsBody = null;
+    String mFirstNewsHeading, mSecondNewsHeading, mThirdNewsHeading;
+    String mFirstNewsBody, mSecondNewsBody, mThirdNewsBody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
