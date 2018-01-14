@@ -7,29 +7,38 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private TextView mNewsHeading;
-    private TextView mNewsBody;
+    private TextView mNewsHeadingTextView;
+    private TextView mNewsBodyTextView;
 
     String mFirstNewsHeading = null;
-    String mFirstNewsBody = null;
+    String mSecondNewsHeading = null;
+    String mNewsBody = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        mNewsHeading = (TextView) findViewById(R.id.news_heading);
-        mNewsBody = (TextView) findViewById(R.id.news_body);
+        mNewsHeadingTextView = (TextView) findViewById(R.id.news_heading);
+        mNewsBodyTextView = (TextView) findViewById(R.id.news_body);
 
         Intent intent = getIntent();
-        Bundle firstNewsExtras = intent.getExtras();
+        Bundle extras = intent.getExtras();
 
+        if (extras != null) {
+            mNewsBody = extras.getString("NewsBody");
 
-        if (firstNewsExtras != null) {
-            mFirstNewsHeading = firstNewsExtras.getString("NewsOneHeading");
-            mFirstNewsBody = firstNewsExtras.getString("NewsOneBody");
+            if (extras.containsKey("NewsOneHeading")) {
+                mFirstNewsHeading = extras.getString("NewsOneHeading");
+                mNewsHeadingTextView.setText(mFirstNewsHeading);
+            }
+
+            if (extras.containsKey("NewsTwoHeading")) {
+                mSecondNewsHeading = extras.getString("NewsTwoHeading");
+                mNewsHeadingTextView.setText(mSecondNewsHeading);
+            }
         }
-        mNewsHeading.setText(mFirstNewsHeading);
-        mNewsBody.setText(mFirstNewsBody);
+
+        mNewsBodyTextView.setText(mNewsBody);
     }
 }

@@ -15,22 +15,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void showFirstNews(View view) {
         Intent intent = new Intent(this, SecondActivity.class);
-        Bundle firstNewsExtras = new Bundle();
+        Bundle extras = new Bundle();
 
-        firstNewsExtras.putString("NewsOneHeading", getString(R.string.first_news_heading));
-        firstNewsExtras.putString("NewsOneBody", getString(R.string.first_news_body));
+        extras.putString("NewsOneHeading", getString(R.string.first_news_heading));
+        extras.putString("NewsBody", getString(R.string.news_body));
 
-        intent.putExtras(firstNewsExtras);
+        intent.putExtras(extras);
         startActivity(intent);
     }
 
     public void showSecondNews(View view) {
         Intent intent = new Intent(this, SecondActivity.class);
-        startActivity(intent);
-    }
+        Bundle extras = new Bundle();
 
-    public void showThirdNews(View view) {
-        Intent intent = new Intent(this, SecondActivity.class);
+        extras.putString("NewsTwoHeading", getString(R.string.second_news_heading));
+        extras.putString("NewsBody", getString(R.string.news_body));
+
+        intent.putExtras(extras);
         startActivity(intent);
     }
 }
