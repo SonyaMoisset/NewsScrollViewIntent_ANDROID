@@ -15,6 +15,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void showFirstNews(View view) {
         Intent intent = new Intent(this, SecondActivity.class);
+        Bundle firstNewsExtras = new Bundle();
+
+        firstNewsExtras.putString("NewsOneHeading", getString(R.string.first_news_heading));
+        firstNewsExtras.putString("NewsOneBody", getString(R.string.first_news_body));
+
+        intent.putExtras(firstNewsExtras);
         startActivity(intent);
     }
 

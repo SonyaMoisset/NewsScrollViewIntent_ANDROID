@@ -19,7 +19,7 @@
         android:layout_weight="1"
         android:background="@color/colorPrimary"
         android:onClick="showFirstNews"
-        android:text="@string/first_news"
+        android:text="@string/first_news_button"
         android:textColor="@android:color/white"
         android:textSize="@dimen/textSize_large"/>
 
@@ -31,7 +31,7 @@
         android:layout_weight="1"
         android:background="@color/colorPrimary"
         android:onClick="showSecondNews"
-        android:text="@string/second_news"
+        android:text="@string/second_news_button"
         android:textColor="@android:color/white"
         android:textSize="@dimen/textSize_large"/>
 
@@ -42,8 +42,8 @@
         android:layout_weight="1"
         android:background="@color/colorPrimary"
         android:onClick="showThirdNews"
-        android:text="@string/third_news"
+        android:text="@string/third_news_button"
         android:textColor="@android:color/white"
         android:textSize="@dimen/textSize_large"/>
-    
+
 </LinearLayout>
