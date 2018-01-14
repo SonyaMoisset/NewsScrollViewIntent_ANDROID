@@ -22,6 +22,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
+        android:padding="@dimen/padding_small"
         android:layout_height="wrap_content">
 
         <TextView

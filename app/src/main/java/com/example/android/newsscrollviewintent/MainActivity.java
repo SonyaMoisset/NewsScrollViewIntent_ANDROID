@@ -7,6 +7,14 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String EXTRA_FIRST_NEWS_HEADING = "FirstNewsHeading";
+    public static final String EXTRA_SECOND_NEWS_HEADING = "SecondNewsHeading";
+    public static final String EXTRA_THIRD_NEWS_HEADING = "ThirdNewsHeading";
+
+    public static final String EXTRA_FIRST_NEWS_BODY = "FirstNewsBody";
+    public static final String EXTRA_SECOND_NEWS_BODY = "SecondNewsBody";
+    public static final String EXTRA_THIRD_NEWS_BODY = "ThirdNewsBody";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SecondActivity.class);
         Bundle extras = new Bundle();
 
-        extras.putString("NewsOneHeading", getString(R.string.first_news_heading));
-        extras.putString("NewsBody", getString(R.string.news_body));
+        extras.putString(EXTRA_FIRST_NEWS_HEADING, getString(R.string.first_news_heading));
+        extras.putString(EXTRA_FIRST_NEWS_BODY, getString(R.string.first_news_body));
 
         intent.putExtras(extras);
         startActivity(intent);
@@ -28,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SecondActivity.class);
         Bundle extras = new Bundle();
 
-        extras.putString("NewsTwoHeading", getString(R.string.second_news_heading));
-        extras.putString("NewsBody", getString(R.string.news_body));
+        extras.putString(EXTRA_SECOND_NEWS_HEADING, getString(R.string.second_news_heading));
+        extras.putString(EXTRA_SECOND_NEWS_BODY, getString(R.string.second_news_body));
 
         intent.putExtras(extras);
         startActivity(intent);
@@ -39,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SecondActivity.class);
         Bundle extras = new Bundle();
 
-        extras.putString("NewsThreeHeading", getString(R.string.third_news_heading));
-        extras.putString("NewsBody", getString(R.string.news_body));
+        extras.putString(EXTRA_THIRD_NEWS_HEADING, getString(R.string.third_news_heading));
+        extras.putString(EXTRA_THIRD_NEWS_BODY, getString(R.string.third_news_body));
 
         intent.putExtras(extras);
         startActivity(intent);

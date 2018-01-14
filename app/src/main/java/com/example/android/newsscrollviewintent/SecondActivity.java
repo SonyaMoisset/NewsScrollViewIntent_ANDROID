@@ -7,44 +7,50 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private TextView mNewsHeadingTextView;
-    private TextView mNewsBodyTextView;
-
     String mFirstNewsHeading = null;
     String mSecondNewsHeading = null;
     String mThirdNewsHeading = null;
-    String mNewsBody = null;
+
+    String mFirstNewsBody = null;
+    String mSecondNewsBody = null;
+    String mThirdNewsBody = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        mNewsHeadingTextView = (TextView) findViewById(R.id.news_heading);
-        mNewsBodyTextView = (TextView) findViewById(R.id.news_body);
+        TextView newsHeadingTextView = findViewById(R.id.news_heading);
+        TextView newsBodyTextView = findViewById(R.id.news_body);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
         if (extras != null) {
-            mNewsBody = extras.getString("NewsBody");
 
-            if (extras.containsKey("NewsOneHeading")) {
-                mFirstNewsHeading = extras.getString("NewsOneHeading");
-                mNewsHeadingTextView.setText(mFirstNewsHeading);
+            if (extras.containsKey(MainActivity.EXTRA_FIRST_NEWS_HEADING) && extras.containsKey(MainActivity.EXTRA_FIRST_NEWS_BODY)) {
+                mFirstNewsHeading = extras.getString(MainActivity.EXTRA_FIRST_NEWS_HEADING);
+                mFirstNewsBody = extras.getString(MainActivity.EXTRA_FIRST_NEWS_BODY);
+
+                newsHeadingTextView.setText(mFirstNewsHeading);
+                newsBodyTextView.setText(mFirstNewsBody);
             }
 
-            if (extras.containsKey("NewsTwoHeading")) {
-                mSecondNewsHeading = extras.getString("NewsTwoHeading");
-                mNewsHeadingTextView.setText(mSecondNewsHeading);
+            if (extras.containsKey(MainActivity.EXTRA_SECOND_NEWS_HEADING) && extras.containsKey(MainActivity.EXTRA_SECOND_NEWS_BODY)) {
+                mSecondNewsHeading = extras.getString(MainActivity.EXTRA_SECOND_NEWS_HEADING);
+                mSecondNewsBody = extras.getString(MainActivity.EXTRA_SECOND_NEWS_BODY);
+
+                newsHeadingTextView.setText(mSecondNewsHeading);
+                newsBodyTextView.setText(mSecondNewsBody);
             }
 
-            if (extras.containsKey("NewsThreeHeading")) {
-                mThirdNewsHeading = extras.getString("NewsThreeHeading");
-                mNewsHeadingTextView.setText(mThirdNewsHeading);
+            if (extras.containsKey(MainActivity.EXTRA_THIRD_NEWS_HEADING) && extras.containsKey(MainActivity.EXTRA_THIRD_NEWS_BODY)) {
+                mThirdNewsHeading = extras.getString(MainActivity.EXTRA_THIRD_NEWS_HEADING);
+                mThirdNewsBody = extras.getString(MainActivity.EXTRA_THIRD_NEWS_BODY);
+
+                newsHeadingTextView.setText(mThirdNewsHeading);
+                newsBodyTextView.setText(mThirdNewsBody);
             }
         }
-
-        mNewsBodyTextView.setText(mNewsBody);
     }
 }
